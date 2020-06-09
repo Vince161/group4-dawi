@@ -1,16 +1,16 @@
 <?php
 
 class Etudiant
+
 {
 
 	// Element BDD
 
 	private $_id;
-	private $_nom;
-	private $_prenom;
-	private $_age;
+	private $_note;
+	private $_edt;
 	private $_classe;
-	private $_notes;
+	
 
 
 	// Constructeur
@@ -41,27 +41,20 @@ class Etudiant
 			$this->_id = $id;
 	}
 
-	public function setNom($nom)
+	public function setNote($note)
 	{
 	
-		if(is_string($nom))
-			$this->_nom = $nom;
+		$note = (float) $note;
+
+		if($note => 0)
+			$this->_note = $note;
 	}
 
-	public function setPrenom($prenom)
+	public function setEdt($edt)
 	{
 	
-		if(is_string($prenom))
-			$this->_prenom = $prenom;
-	}
-
-	public function setAge($age)
-	{
-	
-		$age = (int) $age;
-
-		if($age > 0)
-			$this->_age = $age;
+		if(is_string($edt))
+			$this->_edt = $edt;
 	}
 
 	public function setClasse($classe)
@@ -71,15 +64,6 @@ class Etudiant
 			$this->_classe = $classe;
 	}
 
-	public function setNom($notes)
-	{
-	
-		$notes = (int) $notes;
-
-		if($notes => 0)
-			$this->_notes = $notes;
-	}
-	
 
 	// Getters
 
@@ -88,19 +72,14 @@ class Etudiant
 		return $this->_id;
 	}
 
-	public function nom()
+	public function note()
 	{
-		return $this->_nom;
+		return $this->_note;
 	}
 
-	public function prenom()
+	public function edt()
 	{
-		return $this->_prenom;
-	}
-
-	public function age()
-	{
-		return $this->_age;
+		return $this->_edt;
 	}
 
 	public function classe()
@@ -108,10 +87,6 @@ class Etudiant
 		return $this->_classe;
 	}
 
-	public function notes()
-	{
-		return $this->_notes;
-	}
 }
 
 
