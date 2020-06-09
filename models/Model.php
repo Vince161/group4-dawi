@@ -6,7 +6,7 @@ abstract class Model
 
     private static function setBdd()
     {
-        self::$_bdd = new PDO('mysql:host=localhost;dbname=bdddawi;charset=utf8','root','root');
+        self::$_bdd = new PDO('mysql:host=localhost;dbname=bdddawi;charset=utf8','root','');
         self::$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
 
@@ -20,7 +20,7 @@ abstract class Model
     protected function getAll($table, $obj)
     {
       $var = [];
-      $req = this->getBdd()->prepare('SELECT * FROM' .table. 'ORDER BY id desc');
+      $req = this->getBdd()->prepare('SELECT * FROM ' .table. ' ORDER BY id desc');
       $req->execute();
       while($data = $req->fetch(PDO:FETCH_ASSOC))
       {
