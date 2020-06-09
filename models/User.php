@@ -7,7 +7,7 @@ class User
 	// Element BDD
 
 	private $_id;
-	private $_pwd
+	private $_pwd;
 	private $_nom;
 	private $_prenom;
 	private $_email;
